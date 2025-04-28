@@ -48,7 +48,7 @@ script = ExtResource("3_gbfbk")
 
 [node name="Player" parent="ActorsContainer" instance=ExtResource("2_fj7yv")]
 position = Vector2(36, 46)
-has_knife = true
+has_gun = true
 
 [node name="Barrel" parent="ActorsContainer" instance=ExtResource("4_aqk2v")]
 position = Vector2(61, 47)
@@ -64,3 +64,7 @@ position = Vector2(21, 52)
 [node name="GoonEnemy" parent="ActorsContainer" node_paths=PackedStringArray("player") instance=ExtResource("7_pkg7o")]
 position = Vector2(83, 51)
 player = NodePath("../Player")
+can_respawn_knives = false
+damage_gunshot = 0
+has_knife = false
+has_gun = true
