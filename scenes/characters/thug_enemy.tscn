@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccjjv2d6b3rlh"]
+
+[ext_resource type="PackedScene" uid="uid://d3so1qjit3d7e" path="res://scenes/characters/basic_enemy.tscn" id="1_764t5"]
+
+[node name="ThugEnemy" instance=ExtResource("1_764t5")]
+duration_between_melee_attacks = 1500
+duration_between_range_attacks = 2500
+damage = 3
+duration_grounded = 1300.0
+speed = 0.0
+has_gun = true
+
+[editable path="DamageEmitter"]
+[editable path="DamageReceiver"]
+[editable path="CollateralDamageEmitter"]
