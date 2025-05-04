@@ -34,7 +34,6 @@ func _ready() -> void:
 	damage_emitter.area_entered.connect(on_emit_damage.bind())
 	damage_emitter.body_exited.connect(on_exit_screen.bind())
 	damage_emitter.position = Vector2.UP * height
-	damage_emitter.monitoring = state == State.FLY
 
 func _process(delta: float) -> void:
 	handle_fall(delta)
