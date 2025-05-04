@@ -6,10 +6,11 @@
 [node name="GoonEnemy" instance=ExtResource("1_55rrx")]
 damage = 1
 max_health = 18
+type = 2
 duration_grounded = 700.0
 flight_speed = 120.0
 knockdown_intensity = 80.0
-speed = 0.0
+speed = 28.0
 can_respawn_knives = true
 duration_between_knife_respawn = 1000
 has_knife = true

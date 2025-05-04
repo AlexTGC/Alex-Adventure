@@ -6,6 +6,7 @@ const GRAVITY := 600.0
 @export var can_respawn : bool
 @export var damage : int
 @export var max_health : int
+@export var type : Type
 
 @export_group("Movement")
 @export var duration_grounded : float
@@ -37,7 +38,8 @@ const GRAVITY := 600.0
 @onready var projectile_aim : RayCast2D = $ProjectileAim
 @onready var weapon_position : Node2D = $KnifeSprite/WeaponPosition
 
-enum State {IDLE, WALK, ATTACK, TAKEOFF, JUMP, LAND, JUMPKICK, HURT, FALL, GROUNDED, DEATH, FLY, PREP_ATTACK, THROW, PICKUP, SHOOT, PREP_SHOOT}
+enum State {IDLE, WALK, ATTACK, TAKEOFF, JUMP, LAND, JUMPKICK, HURT, FALL, GROUNDED, DEATH, FLY, PREP_ATTACK, THROW, PICKUP, SHOOT, PREP_SHOOT, RECOVER}
+enum Type {PLAYER, PUNK, GOON, THUG, BOUNCER}
 
 var ammo_left := 0
 var anim_attacks := []
@@ -59,6 +61,7 @@ var anim_map := {
 	State.PICKUP: "pickup",
 	State.SHOOT: "shoot",
 	State.PREP_SHOOT: "idle",
+	State.RECOVER: "recover",
 }
 var attack_combo_index := 0
 var current_health := 0
@@ -97,6 +100,7 @@ func _process(delta: float) -> void:
 	collision_shape.disabled = is_collision_disabled()
 	damage_emitter.monitoring = is_attacking()
 	damage_receiver.monitorable = can_get_hurt()
+	collateral_damage_emitter.monitoring = state == State.FLY
 	move_and_slide()
 
 func handle_movement() -> void:

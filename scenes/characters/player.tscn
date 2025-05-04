@@ -919,6 +919,7 @@ duration_grounded = 1000.0
 jump_intensity = 150.0
 knockback_intensity = 10.0
 knockdown_intensity = 70.0
+speed = 35.0
 autodestroy_on_drop = true
 damage_gunshot = 8
 damage_power = 6
