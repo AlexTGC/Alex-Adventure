@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c8q0svtuivk3d"]
+[gd_scene load_steps=8 format=3 uid="uid://c8q0svtuivk3d"]
 
 [ext_resource type="Script" uid="uid://ccrv4exb5qgc2" path="res://world.gd" id="1_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://dtnfi0qnvh02h" path="res://scenes/ui/ui.tscn" id="2_036b0"]
 [ext_resource type="PackedScene" uid="uid://djuvyn6dhh05l" path="res://scenes/characters/player.tscn" id="2_fj7yv"]
 [ext_resource type="Script" uid="uid://d1bd8buf81rt0" path="res://scenes/stage/actors_container.gd" id="3_gbfbk"]
+[ext_resource type="Script" uid="uid://qd11ri8wrbc4" path="res://scenes/stage/camera.gd" id="4_dwbse"]
 [ext_resource type="PackedScene" uid="uid://b6v37wn4v0k8r" path="res://scenes/stage/stage_01_streets.tscn" id="5_dwbse"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tlwt5"]
@@ -14,10 +15,19 @@ script = ExtResource("1_tlwt5")
 
 [node name="UI" parent="." instance=ExtResource("2_036b0")]
 
+[node name="ScoreIndicator" parent="UI/UIContainer" index="5"]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 29.0
+offset_bottom = 23.0
+
 [node name="Stage-01-Streets" parent="." instance=ExtResource("5_dwbse")]
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(50, 32)
+script = ExtResource("4_dwbse")
+duration_shake = 50
+shake_intensity = 1
 
 [node name="InvisibleWalls" type="Node2D" parent="Camera"]
 position = Vector2(-50, -32)
