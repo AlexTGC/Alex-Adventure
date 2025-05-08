@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ccjjv2d6b3rlh"]
+[gd_scene load_steps=3 format=3 uid="uid://ccjjv2d6b3rlh"]
 
 [ext_resource type="PackedScene" uid="uid://d3so1qjit3d7e" path="res://scenes/characters/basic_enemy.tscn" id="1_764t5"]
+[ext_resource type="Texture2D" uid="uid://dblxims1jhovi" path="res://assets/art/characters/enemy_thug.png" id="2_qlivg"]
 
 [node name="ThugEnemy" instance=ExtResource("1_764t5")]
 duration_appear = 0.0
@@ -10,6 +11,9 @@ damage = 3
 type = 3
 duration_grounded = 1300.0
 has_gun = true
+
+[node name="CharacterSprite" parent="." index="1"]
+texture = ExtResource("2_qlivg")
 
 [editable path="DamageEmitter"]
 [editable path="DamageReceiver"]

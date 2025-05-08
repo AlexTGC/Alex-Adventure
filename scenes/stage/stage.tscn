@@ -34,3 +34,7 @@ shape = SubResource("RectangleShape2D_8rem4")
 [node name="Containers" type="Node2D" parent="."]
 
 [node name="Doors" type="Node2D" parent="."]
+
+[node name="Fixtures" type="Node2D" parent="."]
+
+[node name="PlayerSpawnLocation" type="Node2D" parent="."]

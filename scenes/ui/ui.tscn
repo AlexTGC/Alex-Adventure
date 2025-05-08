@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dtnfi0qnvh02h"]
+[gd_scene load_steps=10 format=3 uid="uid://dtnfi0qnvh02h"]
 
 [ext_resource type="Script" uid="uid://cda50kupib6qr" path="res://scenes/ui/ui.gd" id="1_g5kmx"]
 [ext_resource type="Texture2D" uid="uid://cvfw08k88v83i" path="res://assets/art/ui/avatars/avatar-punk.png" id="1_u7n8c"]
@@ -8,8 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://clhtmfckij4qb" path="res://scenes/ui/score_indicator.tscn" id="6_pfayw"]
 [ext_resource type="PackedScene" uid="uid://bnfbyckj7et06" path="res://scenes/ui/flickering_texture_rect.tscn" id="7_7vp6q"]
 [ext_resource type="Texture2D" uid="uid://b6jq5ncibcr1u" path="res://assets/art/ui/go-go-go.png" id="8_jcn1r"]
+[ext_resource type="PackedScene" uid="uid://cvaw3323g6e40" path="res://scenes/ui/stage_transition.tscn" id="9_uegxj"]
 
 [node name="UI" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_g5kmx")
 duration_healthbar_visible = 1000
 
@@ -101,5 +103,8 @@ texture = ExtResource("8_jcn1r")
 stretch_mode = 2
 duration_flicker = 200
 total_flickers = 3
+
+[node name="StageTransition" parent="UIContainer" instance=ExtResource("9_uegxj")]
+layout_mode = 1
 
 [editable path="UIContainer/EnemyHealthbar"]
