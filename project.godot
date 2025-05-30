@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Alex Adventure"
-run/main_scene="uid://c8q0svtuivk3d"
+run/main_scene="uid://cnp2vq8splorx"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

@@ -49,4 +49,4 @@ func on_shake_value_change(value: int) -> void:
 	OptionsManager.set_screenshake(value == 1)
 
 func on_return_press() -> void:
-	exit.emit()
+	get_tree().change_scene_to_file("res://scenes/ui/main_menu.tscn")
